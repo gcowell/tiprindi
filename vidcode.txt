@@ -1,0 +1,15 @@
+
+
+        if ($format instanceof VideoInterface) {
+            if (null !== $format->getVideoCodec()) {
+
+                if($format->getVideoCodec() === 'vn')
+                {
+                    $filters->add(new SimpleFilter(array('-vn')));
+                }
+                else
+                {
+                    $filters->add(new SimpleFilter(array('-vcodec', $format->getVideoCodec())));
+                }
+            }
+        }
